@@ -1,6 +1,10 @@
 package com.company;
 
 public class Customer {
+    private static char[] letters = {
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+            'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+    };
     private String fName;
     private String lName;
     private String email;
@@ -9,29 +13,19 @@ public class Customer {
         fName = _fName;
         lName = _lName;
         email = _email;
-    }
+        int countFName = 0;
+        int countLName = 0;
 
-    public String getEmail() {
-        return email;
-    }
+            for (int i = 0; i < letters.length; i++) {
+                if (_fName.charAt(0) == letters[i]) {
+                    countFName = (i + 1);
+                }
+                if (_lName.charAt(0) == letters[i]) {
+                    countLName = (i + 1);
+                }
 
-    public void setEmail(String _email) {
-        email = _email;
-    }
+            }
+            System.out.printf("The account number is: %c%c-%s-%s-%s, pin code is %s%s\n", _fName.charAt(0), _lName.charAt(0), _fName.length() + _lName.length(), countFName, countLName, countFName, countLName);
 
-    public String getlName() {
-        return lName;
-    }
-
-    public void setlName(String _lName) {
-        lName = _lName;
-    }
-
-    public String getfName() {
-        return fName;
-    }
-
-    public void setfName(String _fName) {
-        fName = _fName;
     }
 }
