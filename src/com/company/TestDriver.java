@@ -2,8 +2,24 @@ package com.company;
 
 public class TestDriver {
     public static void run(){
-        testLogginIn();
-        testListOfCustomer();
+//        testLogginIn();
+//        testListOfCustomer();
+        testCurrentAccount();
+        testSavingAccount();
+    }
+
+    private static void testSavingAccount() {
+        SavingAccount savingAccount = new SavingAccount("alex", "silva", "alexsonsilva@gmail.com");
+        savingAccount.deposit(10000);
+        savingAccount.display();
+    }
+
+    private static void testCurrentAccount() {
+        CurrentAccount currentAccount = new CurrentAccount("joe", "smith", "joe@gmail.com");
+        currentAccount.deposit(100);
+        currentAccount.display();
+        currentAccount.withdraw(50);
+        currentAccount.display();
     }
 
     private static void testListOfCustomer() {
